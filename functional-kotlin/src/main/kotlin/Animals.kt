@@ -35,7 +35,7 @@ fun runOverArmadillo(dillo: Armadillo): Armadillo =
     Armadillo(Dead, dillo.weight)
 
 
-fun runOverAnimal(animal: Armadillo): Armadillo =
+fun runOverAnimal(animal: Animal): Animal =
     when (animal) {
         is Armadillo -> TODO()
         is Parrot -> TODO()
