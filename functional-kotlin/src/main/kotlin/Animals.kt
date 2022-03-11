@@ -33,3 +33,10 @@ val dillo2 = Armadillo(Dead, 8)
 
 fun runOverArmadillo(dillo: Armadillo): Armadillo =
     Armadillo(Dead, dillo.weight)
+
+
+fun runOverAnimal(animal: Armadillo): Armadillo =
+    when (animal) {
+        is Armadillo -> TODO()
+        is Parrot -> TODO()
+    }
