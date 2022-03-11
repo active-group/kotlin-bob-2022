@@ -33,6 +33,8 @@ data class Parrot(val sentence: String, val weight: Weight): Animal {
         Parrot("", this.weight)
 }
 
+data class Snake(val length: Int, val thickness: Int): Animal 
+
 val dillo1 = Armadillo(Alive, 10)
 val dillo2 = Armadillo(Dead, 8)
 
