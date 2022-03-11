@@ -7,6 +7,7 @@
 
 sealed interface Animal {
     fun runOver(): Animal
+    fun feed(): Animal
 }
 
 // An armadillo has the following properties:
@@ -23,6 +24,9 @@ typealias Weight = Int
 data class Armadillo(val liveness: Liveness, val weight: Weight): Animal {
     override fun runOver(): Animal =
         Armadillo(Dead, this.weight)
+
+    override fun feed(): Animal =
+        Armadillo(this.liveness, weight + 1)
 }
 
 // A parrott has the following properties:
