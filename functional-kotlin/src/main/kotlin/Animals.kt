@@ -43,6 +43,9 @@ data class Parrot(val sentence: String, val weight: Weight): Animal {
 data class Snake(val length: Int, val thickness: Int): Animal {
     override fun runOver(): Animal =
         Snake(this.length, 0)
+
+    override fun feed(): Animal =
+        Snake(this.length, this.thickness + 1)
 }
 
 val dillo1 = Armadillo(Alive, 10)
