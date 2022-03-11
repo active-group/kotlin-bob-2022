@@ -41,4 +41,9 @@ tailrec fun List<Int>.sum1(acc: Int): Int =
             this.rest.sum1(acc + this.first)
     }
 
-fun <A, B> List<A>.fold(forEmpty: B, forCons: (A, B) -> B): B = TODO()
+fun <A, B> List<A>.fold(forEmpty: B, forCons: (A, B) -> B): B =
+    when (this) {
+        is Empty -> forEmpty
+        is Cons ->
+            forCons(this.first, this.rest.fold(forEmpty, forCons))
+    }
