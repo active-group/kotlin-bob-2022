@@ -63,3 +63,4 @@ fun <A, B> List<A>.map(f: (A) -> B): List<B> =
 
 // suspend fun : makes the compiler do a CPS transformation / "monad"
 
+// implement an Option datatype: a value that either contains a result of type A, or the absence of one
