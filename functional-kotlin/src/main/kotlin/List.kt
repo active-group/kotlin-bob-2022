@@ -32,9 +32,11 @@ fun List<Int>.sum(): Int =
         is Cons -> this.first + listSum(this.rest)
     }
 
-fun List<Int>.sum1(acc: Int): Int =
+// makes the Kotlin compiler compile the recursive call to a jump
+tailrec fun List<Int>.sum1(acc: Int): Int =
     when (this) {
         is Empty -> acc
         is Cons ->
+            // tail call / no context
             this.rest.sum1(acc + this.first)
     }
