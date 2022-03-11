@@ -21,14 +21,17 @@ typealias Weight = Int
 
 // data classes: immutable, you equality, hashing
 data class Armadillo(val liveness: Liveness, val weight: Weight): Animal {
-    fun runOver(): Animal =
+    override fun runOver(): Animal =
         Armadillo(Dead, this.weight)
 }
 
 // A parrott has the following properties:
 // - sentence
 // - weight
-data class Parrot(val sentence: String, val weight: Weight): Animal
+data class Parrot(val sentence: String, val weight: Weight): Animal {
+    override fun runOver(): Animal =
+        Parrot("", this.weight)
+}
 
 val dillo1 = Armadillo(Alive, 10)
 val dillo2 = Armadillo(Dead, 8)
