@@ -40,3 +40,5 @@ tailrec fun List<Int>.sum1(acc: Int): Int =
             // tail call / no context
             this.rest.sum1(acc + this.first)
     }
+
+fun <A, B> List<A>.fold(forEmpty: B, forCons: (A, B) -> B): B = TODO()
