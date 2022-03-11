@@ -49,4 +49,12 @@ fun <A, B> List<A>.fold(forEmpty: B, forCons: (A, B) -> B): B =
     }
 
 fun listSum2(list: List<Int>): Int =
-    list.fold(0, { f, r -> f + r} )
+    // list.fold(0, { f, r -> f + r} )
+    list.fold(0) { f, r -> f + r }
+
+fun <A, B> List<A>.map(f: A -> B): List<B> =
+    when (this) {
+        is Empty -> Empty
+        is Cons ->
+            Cons(f(this.first), this.rest.map(f))
+    }
