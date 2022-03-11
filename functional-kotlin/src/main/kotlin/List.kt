@@ -7,6 +7,7 @@ data class Cons<A>(val first: A, val rest: List<A>): List<A>
 
 val list1 = Cons(5, Empty)
 val list2 = Cons ("Mike", Cons("Sperber", Empty))
+val list4 = Cons(2, Cons(3, Cons(5, Empty)))
 
 fun listSum(list: List<Int>): Int =
     when (list) {
