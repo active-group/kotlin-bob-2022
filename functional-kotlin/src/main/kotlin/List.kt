@@ -22,8 +22,19 @@ fun listSum(list: List<Int>): Int =
         is Cons -> list.first + listSum(list.rest)
     }
 
+// large lists will cause stack overflow
+// JVM:
+// - each method call allocates on the stack
+// - stack is small
 fun List<Int>.sum(): Int =
     when (this) {
         is Empty -> 0
         is Cons -> this.first + listSum(this.rest)
+    }
+
+fun List<Int>.sum1(acc: Int): Int =
+    when (this) {
+        is Empty -> acc
+        is Cons ->
+            this.rest.sum1(acc + this.first)
     }
