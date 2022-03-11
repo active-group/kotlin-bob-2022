@@ -5,7 +5,9 @@
 // - an parrot
 // mixed data / sum type / discriminated union
 
-sealed interface Animal
+sealed interface Animal {
+    fun runOver(): Animal
+}
 
 // An armadillo has the following properties:
 // - dead or alive - AND -
@@ -19,7 +21,7 @@ typealias Weight = Int
 
 // data classes: immutable, you equality, hashing
 data class Armadillo(val liveness: Liveness, val weight: Weight): Animal {
-    fun runOver(): Armadillo =
+    fun runOver(): Animal =
         Armadillo(Dead, this.weight)
 }
 
@@ -37,6 +39,6 @@ fun runOverArmadillo(dillo: Armadillo): Armadillo =
 
 fun runOverAnimal(animal: Animal): Animal =
     when (animal) {
-        is Armadillo -> TODO()
-        is Parrot -> TODO()
+        is Armadillo -> runOverArmadillo(animal)
+        is Parrot -> Parrot("", animal.weight)
     }
