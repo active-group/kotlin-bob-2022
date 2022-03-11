@@ -61,3 +61,10 @@ fun runOverAnimal(animal: Animal): Animal =
         is Parrot -> Parrot("", animal.weight)
         is Snake -> Snake(animal.length, 0)
     }
+
+fun Animal.stuff(): Animal =
+    when (this) {
+        is Armadillo -> Armadillo(this.liveness, this.weight * 2)
+        is Parrot -> Parrot(this.sentence, this.weight * 2)
+        is Snake -> Snake(this.length, this.thickness * 2)
+    }
