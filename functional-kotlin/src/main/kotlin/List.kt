@@ -58,3 +58,8 @@ fun <A, B> List<A>.map(f: (A) -> B): List<B> =
         is Cons ->
             Cons(f(this.first), this.rest.map(f))
     }
+
+// no higher-kinded types: can't abstract over type constructor
+
+// suspend fun : makes the compiler do a CPS transformation / "monad"
+
