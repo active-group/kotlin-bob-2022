@@ -15,10 +15,12 @@ sealed interface Liveness
 object Dead : Liveness
 object Alive : Liveness
 
+typealias Weight = Int
+
 // data classes: immutable, you equality, hashing
-data class Armadillo(val liveness: Liveness, val weight: Int): Animal
+data class Armadillo(val liveness: Liveness, val weight: Weight): Animal
 
 // A parrott has the following properties:
 // - sentence
 // - weight
-data class Parrot(val sentence: String, val weight: Int): Animal
+data class Parrot(val sentence: String, val weight: Weight): Animal
