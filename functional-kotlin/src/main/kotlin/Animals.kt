@@ -25,5 +25,8 @@ data class Armadillo(val liveness: Liveness, val weight: Weight): Animal
 // - weight
 data class Parrot(val sentence: String, val weight: Weight): Animal
 
+val dillo1 = Armadillo(Alive, 10)
+val dillo2 = Armadillo(Dead, 8)
+
 fun runOverArmadillo(dillo: Armadillo): Armadillo =
     Armadillo(Dead, dillo.weight)
