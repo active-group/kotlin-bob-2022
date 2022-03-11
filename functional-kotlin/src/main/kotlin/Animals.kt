@@ -18,7 +18,10 @@ object Alive : Liveness
 typealias Weight = Int
 
 // data classes: immutable, you equality, hashing
-data class Armadillo(val liveness: Liveness, val weight: Weight): Animal
+data class Armadillo(val liveness: Liveness, val weight: Weight): Animal {
+    fun runOver(): Armadillo =
+        Armadillo(Dead, this.weight)
+}
 
 // A parrott has the following properties:
 // - sentence
