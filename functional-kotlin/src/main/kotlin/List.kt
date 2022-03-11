@@ -47,3 +47,6 @@ fun <A, B> List<A>.fold(forEmpty: B, forCons: (A, B) -> B): B =
         is Cons ->
             forCons(this.first, this.rest.fold(forEmpty, forCons))
     }
+
+fun listSum2(list: List<Int>): Int =
+    list.fold(0, { (f, r) -> f + r} )
