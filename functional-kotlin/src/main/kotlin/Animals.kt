@@ -17,3 +17,8 @@ object Alive : Liveness
 
 // data classes: immutable, you equality, hashing
 data class Armadillo(val liveness: Liveness, val weight: Int): Animal
+
+// A parrott has the following properties:
+// - sentence
+// - weight
+data class Parrot(val sentence: String, val weight: Int): Animal
