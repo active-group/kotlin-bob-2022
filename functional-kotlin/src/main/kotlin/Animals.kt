@@ -57,7 +57,10 @@ fun runOverArmadillo(dillo: Armadillo): Armadillo =
 
 fun runOverAnimal(animal: Animal): Animal =
     when (animal) {
-        is Armadillo -> runOverArmadillo(animal)
+        is Armadillo -> {
+            val armadillo: Armadillo = animal
+            runOverArmadillo(armadillo)
+        }
         is Parrot -> Parrot("", animal.weight)
         is Snake -> Snake(animal.length, 0)
     }
